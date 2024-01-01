@@ -124,6 +124,59 @@ namespace LcLSoftRenderer
             }
         }
 
+        bool checkContinue(int i)
+        {
+            if (i/3 == 0 && !DebugMgr.Get().Face0)
+            {
+                return true;
+            }
+            if (i / 3 == 1 && !DebugMgr.Get().Face1)
+            {
+                return true; ;
+            }
+            if (i / 3 == 2 && !DebugMgr.Get().Face2)
+            {
+                return true; ;
+            }
+            if (i / 3 == 3 && !DebugMgr.Get().Face3)
+            {
+                return true; ;
+            }
+            if (i / 3 == 4 && !DebugMgr.Get().Face4)
+            {
+                return true; ;
+            }
+            if (i / 3 == 5 && !DebugMgr.Get().Face5)
+            {
+                return true; ;
+            }
+            if (i / 3 == 6 && !DebugMgr.Get().Face6)
+            {
+                return true; ;
+            }
+            if (i / 3 == 7 && !DebugMgr.Get().Face7)
+            {
+                return true; ;
+            }
+            if (i / 3 == 8 && !DebugMgr.Get().Face8)
+            {
+                return true; ;
+            }
+            if (i / 3 == 9 && !DebugMgr.Get().Face9)
+            {
+                return true; ;
+            }
+            if (i / 3 == 10 && !DebugMgr.Get().Face10)
+            {
+                return true; ;
+            }
+            if (i / 3 == 11 && !DebugMgr.Get().Face11)
+            {
+                return true; ;
+            }
+            return false;
+        }
+
         /// <summary>
         /// 绘制图元
         /// </summary>
@@ -138,6 +191,11 @@ namespace LcLSoftRenderer
             var count = indexBuffer.Count();
             for (int i = 0; i < count; i += 3)
             {
+                if(checkContinue(i))
+                {
+                    continue;
+                }
+
                 Vertex v0 = vertexBuffer[indexBuffer[i + 0]];
                 Vertex v1 = vertexBuffer[indexBuffer[i + 1]];
                 Vertex v2 = vertexBuffer[indexBuffer[i + 2]];

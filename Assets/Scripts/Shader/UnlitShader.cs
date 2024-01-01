@@ -29,6 +29,7 @@ namespace LcLSoftRenderer
         {
             VertexOutput output = new UnlitVertexOutput();
             output.positionCS = TransformTool.TransformObjectToHClip(vertex.position.xyz, MatrixMVP);
+            Debug.Log($"x:{output.positionCS.x} y:{output.positionCS.y} z:{output.positionCS.z} w:{output.positionCS.w}");
             output.uv = vertex.uv;
             return output;
         }
